@@ -1,0 +1,14 @@
+[[package]]
+category = "main"
+description = "Telegram APIs"
+name = "telegram"
+optional = false
+python-versions = "*"
+version = "0.0.1"
+
+[metadata]
+content-hash = "eefa0c51dc9e29b2c4285cd7a56f2de5545a1913b13804cc34fd8d16df74efde"
+python-versions = "^3.7"
+
+[metadata.hashes]
+telegram = ["d405a0af4c868a8dbeae6d03e297e21c7ee6269e11e2ed3810e15544aba02591"]
