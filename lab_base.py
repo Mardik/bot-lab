@@ -1,19 +1,20 @@
 from telegram.ext import Updater, CommandHandler
+from decouple import config
+
+TOKEN = config('TOKEN')
 
 #Updater - Dados novos enviados
 #CommandHandler - Instância de um comando.
 
 #Função de tramento de comando
-def funcao(update, context):
+def funcao_handle(update, context):
 
-    #Envia uma mensagem com o conteúdo passado como parametro.
-    update.message.reply_text(
-        'Menssagem {}'.format(update.message.from_user.first_name))
+    #Implemente aqui a função que vai tratar o handler/commando.
 
 
-updater = Updater('YOUR TOKEN HERE', use_context=True)
+updater = Updater(TOKEN, use_context=True)
 
-#Vincula função a comando
+#Vincula função a handler/commando.
 updater.dispatcher.add_handler(CommandHandler('comando', funcao))
 
 updater.start_polling()

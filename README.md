@@ -1,5 +1,6 @@
 # bot-lab
 
+Bot lab do grupo DevOpsPBS.
 
 # Features:
 - [ ] getid - Get ID do usuário;
