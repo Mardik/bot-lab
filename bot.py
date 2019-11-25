@@ -1,7 +1,10 @@
 from decouple import config
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 
 TOKEN = config('TOKEN')
+CHAT_ID = config('CHAT_ID')
+
+FORWARD = range(1)
 
 
 def start(update, context):
@@ -21,6 +24,15 @@ def message(update, context):
         '{} você me enviou a mensagem {}.'.format(
             update.message.from_user.first_name,
             update.message.text))
+
+
+def contact(update, context):
+    update.message.reply_text('Ok, send your question please.')
+    return FORWARD
+
+
+def forward(update, context):
+    update.message.forward(chat_id=CHAT_ID)
 
 
 updater = Updater(TOKEN, use_context=True)
@@ -48,6 +60,10 @@ dp.add_handler(MessageHandler(Filters.update, message))
 MessageHandler(filters, callback) = 
 Classe para manipular mensagens. Podem conter atualizações de texto, mídia ou status.
 """
+dp.add_handler(ConversationHandler(
+    entry_points=[CommandHandler('contact', contact)],
+    states={FORWARD: [MessageHandler(Filters.text, forward)], },
+    fallbacks=[CommandHandler('start', start)]))
 
 updater.start_polling()
 updater.idle()
