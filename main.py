@@ -2,6 +2,7 @@ from telegram.ext import Updater, CommandHandler
 from decouple import config
 
 TOKEN = config('TOKEN')
+
 #Updater - Dados novos enviados
 #CommandHandler - Instância de um comando.
 
@@ -12,14 +13,9 @@ def get_id(update, context):
     #update: objeto que representa o retorno da API;
     #message: representa a parte do retorno referente a mensagem enviada;
     #from_user: equivale "from" do mensagem com dados do usuário que enviou;
-    #id: é o dado do usuário, no caso o ID dele;
-    text = "Seu ID é {}".format(update.message.from_user.id)
-    update.message.replay_text(text)
-    print(update)
-
-def start(update, context):
-  print(update)
-
+    #id: é o dado do usuário, no caso o ID dele;  
+    update.message.reply_text(
+        'Hello {}'.format(update.message.from_user.id))
 
 updater = Updater(TOKEN, use_context=True)
 
