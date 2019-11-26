@@ -1,1 +1,1 @@
-docker run --rm -it bot-lab:latest  -v $(pwd):/bot bot-lab /bin/bash
+docker run --rm -i -t --name bot-lab -v $(pwd):/bot bot-lab /bin/bash
