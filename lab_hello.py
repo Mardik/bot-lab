@@ -11,11 +11,10 @@ def hello(update, context):
     #Implemente aqui a função que vai tratar o handler/commando.
     #Menda uma mensagem de hello;
     #update: objeto que representa o retorno da API;
-    #message: representa a parte do retorno referente a mensagem enviada;
-    #from_user: equivale "from" do mensagem com dados do usuário que enviou;
-    #id: é o dado do usuário, no caso o ID dele;  
+    #message: representa a parte do retorno referente a mensagem enviada, 
+    #com dados da mensagem e metodos para manipular a mensagem;
     update.message.reply_text(
-        'Hello {}'.format(update.message.from_user.id))
+        'Hello my friendy!!')
 
 updater = Updater(TOKEN, use_context=True)
 

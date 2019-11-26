@@ -15,7 +15,7 @@ def get_id(update, context):
     #from_user: equivale "from" do mensagem com dados do usuário que enviou;
     #id: é o dado do usuário, no caso o ID dele;  
     update.message.reply_text(
-        'Hello {}'.format(update.message.from_user.id))
+        'Seu ID é {}'.format(update.message.from_user.id))
 
 updater = Updater(TOKEN, use_context=True)
 

@@ -4,7 +4,7 @@ Bot lab do grupo DevOpsPBS.
 
 # Features:
 - [x] getid - Get ID do usuário;
-- [ ] hello - Manda uma mensagem para o usuário;
+- [x] hello - Manda uma mensagem para o usuário;
 - [ ] browser - Abre o browser na maquina;
 - [ ] now - Exiber data e hora;
 - [ ] eventos - Exibe os eventos de uma lista;
