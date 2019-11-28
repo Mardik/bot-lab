@@ -16,3 +16,4 @@ updater.dispatcher.add_handler(CommandHandler('comando', funcao))
 
 updater.start_polling()
 updater.idle()
+

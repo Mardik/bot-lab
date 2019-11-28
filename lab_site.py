@@ -14,7 +14,7 @@ def site(update, context):
     #message: representa a parte do retorno referente a mensagem enviada, 
     #com dados da mensagem e metodos para manipular a mensagem;
     update.message.reply_text(
-        'Espero que goste do nosso site: https://devopspbs.org/')
+        'Espero que goste do nosso site:\n https://devopspbs.org/')
 
 updater = Updater(TOKEN, use_context=True)
 
